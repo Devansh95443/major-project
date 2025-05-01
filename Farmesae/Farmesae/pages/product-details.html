@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Farmesae</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/product-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Farmesae</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <div class="wallet-info">
+                <span id="wallet-address">Wallet not connected</span>
+                <button id="connect-wallet" class="btn">Connect Wallet</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="product-details">
+            <div class="product-image">
+                <img id="product-image" src="" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h1 id="product-name"></h1>
+                <p class="price" id="product-price"></p>
+                <p class="description" id="product-description"></p>
+                <div class="stock-info">
+                    <span>Stock: </span>
+                    <span id="product-stock"></span>
+                </div>
+                <div class="quantity-selector">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
+                <button id="add-to-cart" class="btn">Add to Cart</button>
+                <button id="buy-now" class="btn primary">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Blockchain Transaction Status -->
+        <div class="transaction-status" style="display: none;">
+            <h3>Transaction Status</h3>
+            <p>Status: <span id="tx-status">Processing...</span></p>
+            <p>Transaction Hash: <span id="tx-hash"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Farmesae. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/blockchain.js"></script>
+    <script src="../js/product.js"></script>
+</body>
+</html> 

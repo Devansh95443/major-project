@@ -1,0 +1,516 @@
+/* Global Dark Mode Variables */
+:root[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --card-background: #2d2d2d;
+    --input-background: #333333;
+    --border-color: #404040;
+    --text-color: #ffffff;
+    --text-secondary: #b3b3b3;
+    --error-color: #ff6b6b;
+    --success-color: #4caf50;
+    --primary-color: #4CAF50;
+    --primary-color-dark: #388E3C;
+    --primary-color-light: #81C784;
+    --primary-color-rgb: 76, 175, 80;
+    --header-background: #2d2d2d;
+    --footer-background: #1a1a1a;
+    --nav-background: #2d2d2d;
+    --nav-text: #ffffff;
+    --nav-hover: #4CAF50;
+    --product-card-bg: #2d2d2d;
+    --product-card-border: #404040;
+    --price-color: #4CAF50;
+    --rating-color: #ffc107;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Base Styles */
+[data-theme="dark"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header Dark Mode */
+[data-theme="dark"] header {
+    background-color: var(--header-background);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--nav-text);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: var(--nav-hover);
+}
+
+/* Navigation Dark Mode */
+[data-theme="dark"] nav {
+    background-color: var(--nav-background);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--nav-text);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: var(--nav-hover);
+}
+
+/* Product Cards Dark Mode */
+[data-theme="dark"] .product-card {
+    background-color: var(--product-card-bg);
+    border-color: var(--product-card-border);
+}
+
+[data-theme="dark"] .product-card h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .product-card .price {
+    color: var(--price-color);
+}
+
+[data-theme="dark"] .product-card .rating {
+    color: var(--rating-color);
+}
+
+/* Footer Dark Mode */
+[data-theme="dark"] footer {
+    background-color: var(--footer-background);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .footer-links a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Form Elements Dark Mode */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background-color: var(--input-background);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Buttons Dark Mode */
+[data-theme="dark"] .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: var(--primary-color-dark);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background-color: var(--text-secondary);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Apply the same styles as the theme-toggle class */
+.dark-mode-toggle,
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover,
+.theme-toggle:hover {
+    color: var(--primary-color);
+    transform: rotate(30deg);
+}
+
+.dark-mode-toggle i,
+.theme-toggle i {
+    font-size: 1.4rem;
+}
+
+/* Responsive Dark Mode */
+@media (max-width: 768px) {
+    [data-theme="dark"] .mobile-menu {
+        background-color: var(--nav-background);
+    }
+
+    [data-theme="dark"] .mobile-menu a {
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .mobile-menu a:hover {
+        color: var(--primary-color);
+    }
+}
+
+/* Global Dark Mode Styles */
+[data-theme="dark"] header,
+[data-theme="dark"] nav {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .logo {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .search-container {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .search-bar {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .search-bar input {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .search-bar input::placeholder {
+    color: var(--text-color-light);
+}
+
+[data-theme="dark"] .category-select {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .category-select select {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-icons a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Category Navigation */
+[data-theme="dark"] .category-nav {
+    background-color: var(--category-nav-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .category-nav a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .category-nav a:hover {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+[data-theme="dark"] .hero-slider {
+    background-color: var(--background-color);
+}
+
+[data-theme="dark"] .slide {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+[data-theme="dark"] .slide-content {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .product-badge {
+    background-color: var(--primary-color);
+}
+
+/* Features Section */
+[data-theme="dark"] .features-bar {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .feature-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .feature-item:hover {
+    background-color: var(--hover-color);
+}
+
+/* Product Cards */
+[data-theme="dark"] .product-info {
+    background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .product-title,
+[data-theme="dark"] .product-name {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .product-description,
+[data-theme="dark"] .product-category {
+    color: var(--text-color-light);
+}
+
+/* Newsletter Section */
+[data-theme="dark"] .newsletter {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+[data-theme="dark"] .newsletter-form {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+/* Footer */
+[data-theme="dark"] .footer-content {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .footer-section h3,
+[data-theme="dark"] .footer-section h4 {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer-links {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer-link {
+    color: var(--text-color-light);
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+[data-theme="dark"] .footer-link:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-bottom {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+[data-theme="dark"] .footer-social a {
+    color: var(--text-color-light);
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .footer-social a:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-logo {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+[data-theme="dark"] .footer-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-copyright {
+    color: var(--text-color-light);
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .quick-links ul,
+[data-theme="dark"] .footer-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+[data-theme="dark"] .quick-links li,
+[data-theme="dark"] .footer-categories li {
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .footer-newsletter input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .footer-newsletter input::placeholder {
+    color: var(--text-color-light);
+}
+
+[data-theme="dark"] .footer-newsletter button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .footer-newsletter button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* Buttons and Interactive Elements */
+[data-theme="dark"] .btn,
+[data-theme="dark"] .cta-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] .cta-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+[data-theme="dark"] .secondary-button {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .secondary-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Images in Dark Mode */
+[data-theme="dark"] img {
+    filter: brightness(0.8) contrast(1.2);
+}
+
+/* Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+/* Additional Navigation Elements */
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+/* Mobile Navigation */
+[data-theme="dark"] .mobile-menu {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .mobile-menu-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .mobile-menu-item:hover {
+    background-color: var(--hover-color);
+}
+
+/* Cart Badge */
+[data-theme="dark"] .cart-count {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Theme Toggle Button */
+[data-theme="dark"] .theme-toggle {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--hover-color);
+} 

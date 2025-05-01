@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://*.infura.io">
+    <meta name="theme-color" content="#ffffff">
+    <title>Checkout - Farmease</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="../js/products-data.js"></script>
+    <script src="../js/dark-mode.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/checkout.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Farmease</span>
+            </a>
+            <div class="search-container">
+                <div class="search-bar">
+                    <div class="category-select">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="seeds">Seeds</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="cereals">Cereals</option>
+                            <option value="fertilizers">Fertilizers</option>
+                            <option value="tools">Tools</option>
+                            <option value="equipment">Equipment</option>
+                            <option value="pesticides">Pesticides</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="nav-icons">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="account.html" class="account-icon">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="category-nav">
+            <ul>
+                <li><a href="products.html?category=seeds"><i class="fas fa-seedling"></i> Seeds</a></li>
+                <li><a href="products.html?category=fruits"><i class="fas fa-apple-alt"></i> Fruits</a></li>
+                <li><a href="products.html?category=vegetables"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                <li><a href="products.html?category=cereals"><i class="fas fa-wheat"></i> Cereals</a></li>
+                <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i> Fertilizers</a></li>
+                <li><a href="products.html?category=tools"><i class="fas fa-tools"></i> Tools</a></li>
+                <li><a href="products.html?category=equipment"><i class="fas fa-tractor"></i> Equipment</a></li>
+                <li><a href="products.html?category=pesticides"><i class="fas fa-bug"></i> Pesticides</a></li>
+            </ul>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-content">
+                <div class="mobile-search">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <ul class="mobile-categories">
+                    <li><a href="products.html?category=seeds"><i class="fas fa-seedling"></i> Seeds</a></li>
+                    <li><a href="products.html?category=fruits"><i class="fas fa-apple-alt"></i> Fruits</a></li>
+                    <li><a href="products.html?category=vegetables"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="products.html?category=cereals"><i class="fas fa-wheat"></i> Cereals</a></li>
+                    <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i> Fertilizers</a></li>
+                    <li><a href="products.html?category=tools"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="products.html?category=equipment"><i class="fas fa-tractor"></i> Equipment</a></li>
+                    <li><a href="products.html?category=pesticides"><i class="fas fa-bug"></i> Pesticides</a></li>
+                </ul>
+                <div class="mobile-account">
+                    <a href="account.html"><i class="fas fa-user"></i> My Account</a>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Page -->
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <!-- Progress Steps -->
+            <div class="checkout-header">
+                <div class="progress-steps">
+                    <div class="step active" data-step="shipping">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Shipping</div>
+                    </div>
+                    <div class="step" data-step="blockchain">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Blockchain</div>
+                    </div>
+                    <div class="step" data-step="payment">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step" data-step="review">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+                <div class="security-notice">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Checkout</span>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <!-- Shipping Information -->
+                    <section id="shipping-section" class="form-section active">
+                        <h2>Shipping Information</h2>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" required>
+                                <option value="">Select Country</option>
+                                <option value="IN">India</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <!-- Blockchain Payment Section -->
+                    <section id="blockchain-section" class="form-section">
+                        <h2>Blockchain Payment Option</h2>
+                        <div class="blockchain-status">
+                            <p>Connect your wallet to enable blockchain payment. <strong>This step is optional</strong> - you can still use traditional payment methods even after connecting your wallet.</p>
+                            <div class="wallet-status">
+                                <span id="wallet-address">Wallet not connected</span>
+                                <button id="connect-wallet" class="action-button">Connect Wallet</button>
+                            </div>
+                            <div class="contract-info" style="display: none;">
+                                <h3>Smart Contract Details</h3>
+                                <p>Contract Address: <span id="contract-address">0x742d35Cc6634C0532925a3b844Bc454e4438f44e</span></p>
+                                <div class="contract-balance">
+                                    <p>Your balance: <span id="wallet-balance">0 ETH</span></p>
+                                </div>
+                            </div>
+                            <div class="transaction-status" style="display: none;">
+                                <h3>Transaction Details</h3>
+                                <p>Status: <span id="tx-status">Not started</span></p>
+                                <p>Hash: <span id="tx-hash">-</span></p>
+                            </div>
+                            <div class="blockchain-info" style="margin-top: 20px;">
+                                <h3>Why use Blockchain?</h3>
+                                <ul style="margin-left: 20px; line-height: 1.6;">
+                                    <li>Secure and transparent transactions</li>
+                                    <li>No intermediary fees</li>
+                                    <li>Faster payment processing</li>
+                                    <li>Complete control over your funds</li>
+                                </ul>
+                                <div class="blockchain-note" style="margin-top: 15px; padding: 10px; background-color: #f8f9fa; border-left: 4px solid #17a2b8; border-radius: 4px;">
+                                    <p><strong>Note:</strong> If you connect your wallet, a blockchain payment option will be available in the payment step, but you can still choose UPI or Card payment if you prefer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Payment Method -->
+                    <section id="payment-section" class="form-section">
+                        <h2>Payment Method</h2>
+                        <div class="payment-methods">
+                            <!-- Blockchain payment option, hidden by default until wallet is connected -->
+                            <div class="payment-method" id="blockchain-payment-option" style="display: none;">
+                                <input type="radio" name="payment" id="blockchain">
+                                <label for="blockchain">
+                                    <i class="fas fa-link"></i>
+                                    <span>Blockchain Payment</span>
+                                </label>
+                            </div>
+                            <div class="payment-method active">
+                                <input type="radio" name="payment" id="upi" checked>
+                                <label for="upi">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>UPI Payment</span>
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="card">
+                                <label for="card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Blockchain Payment Details -->
+                        <div class="payment-details" id="blockchain-details" style="display: none;">
+                            <div class="blockchain-payment-info">
+                                <p>You'll be using your connected wallet to complete this transaction via smart contract.</p>
+                                <div class="wallet-info">
+                                    <p><strong>Connected Wallet:</strong> <span id="payment-wallet-address">Not connected</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI Payment Details -->
+                        <div class="payment-details" id="upi-details">
+                            <div class="form-group">
+                                <label for="upiId">UPI ID</label>
+                                <input type="text" id="upiId" placeholder="username@upi">
+                            </div>
+                            <div class="upi-apps">
+                                <div class="upi-app">
+                                    <i class="fab fa-google-pay"></i>
+                                    <span>Google Pay</span>
+                                </div>
+                                <div class="upi-app">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>PhonePe</span>
+                                </div>
+                                <div class="upi-app">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>Paytm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Payment Details -->
+                        <div class="payment-details" id="card-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Cardholder Name</label>
+                                <input type="text" id="cardName" placeholder="John Doe">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Review Order -->
+                    <section id="review-section" class="form-section">
+                        <h2>Review Your Order</h2>
+                        <div class="review-content">
+                            <div class="review-section">
+                                <h3>Shipping Details</h3>
+                                <div class="review-info" id="shipping-review"></div>
+                            </div>
+                            <div class="review-section">
+                                <h3>Payment Method</h3>
+                                <div class="review-info" id="payment-review"></div>
+                            </div>
+                            <div class="review-section">
+                                <h3>Order Summary</h3>
+                                <div class="review-info" id="order-review"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Add this at the end of the checkout form div if not already present -->
+                    <div class="checkout-navigation">
+                        <button class="btn-back">Back</button>
+                        <button class="btn-next">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items">
+                        <!-- Items will be added here -->
+                    </div>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax (10%)</span>
+                        <span class="tax">₹0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="total">₹0.00</span>
+                    </div>
+                    <div class="coupon-code">
+                        <input type="text" placeholder="Enter coupon code">
+                        <button>Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Processing Modal -->
+    <div id="paymentProcessingModal" class="modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <h3>Processing Payment</h3>
+            <p>Please do not close this window while your payment is being processed.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    <a href="../index.html">Farmease</a>
+                </div>
+                <p>Your trusted source for quality agricultural products and supplies.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Farm Street, Agriculture City</li>
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope"></i> info@farmesae.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe to our newsletter for updates and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Farmesae. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize payment modal
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('paymentProcessingModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Seeds - Farmesae</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/seeds.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .seed-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .seed-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .seed-card:hover .seed-image img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header Template -->
+    <div id="header-placeholder"></div>
+
+    <main class="seeds-main">
+        <!-- Hero Section -->
+        <section class="seeds-hero">
+            <div class="hero-content">
+                <h1>Premium Agricultural Seeds</h1>
+                <p>Discover our wide selection of high-quality, certified seeds for better yield and sustainable farming.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Seed Varieties</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Germination Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Quality Tested</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seed Categories -->
+        <section class="seed-categories">
+            <div class="section-header">
+                <h2>Explore Our Seeds Collection</h2>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">All Seeds</button>
+                    <button class="filter-btn" data-filter="vegetable">Vegetable Seeds</button>
+                    <button class="filter-btn" data-filter="cereal">Cereal Seeds</button>
+                    <button class="filter-btn" data-filter="pulse">Pulse Seeds</button>
+                    <button class="filter-btn" data-filter="oilseed">Oilseed Seeds</button>
+                    <button class="filter-btn" data-filter="cotton">Cotton Seeds</button>
+                    <button class="filter-btn" data-filter="herb">Herb Seeds</button>
+                </div>
+            </div>
+
+            <div class="seeds-grid">
+                <!-- Vegetable Seeds -->
+                <div class="seed-card" data-category="vegetable">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/tomato.jpg" alt="Tomato Seeds">
+                        <span class="category-badge">Vegetable</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Hybrid Tomato Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> High-Yield</span>
+                            <span><i class="fas fa-clock"></i> 65-75 days</span>
+                        </div>
+                        <p>Disease-resistant hybrid tomato variety with excellent fruit quality.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="price">₹199.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Vegetable Seeds -->
+                <div class="seed-card" data-category="vegetable">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/fresh-vegetables.jpg" alt="Bell Pepper Seeds">
+                        <span class="category-badge">Vegetable</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Sweet Bell Pepper Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> All-Season</span>
+                            <span><i class="fas fa-clock"></i> 70-80 days</span>
+                        </div>
+                        <p>Colorful bell pepper variety perfect for greenhouse cultivation.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="price">₹249.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Cereal Seeds -->
+                <div class="seed-card" data-category="cereal">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/grains.jpg" alt="Wheat Seeds">
+                        <span class="category-badge">Cereal</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Premium Wheat Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Drought-Resistant</span>
+                            <span><i class="fas fa-clock"></i> 110-120 days</span>
+                        </div>
+                        <p>High-yielding wheat variety with excellent drought tolerance.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <div class="price">₹149.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Cereal Seeds -->
+                <div class="seed-card" data-category="cereal">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/brown-rice.jpg" alt="Rice Seeds">
+                        <span class="category-badge">Cereal</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Basmati Rice Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Premium Quality</span>
+                            <span><i class="fas fa-clock"></i> 130-150 days</span>
+                        </div>
+                        <p>Long-grain aromatic rice variety with exceptional cooking quality.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="price">₹299.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Pulse Seeds -->
+                <div class="seed-card" data-category="pulse">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/arhar-dal.jpg" alt="Chickpea Seeds">
+                        <span class="category-badge">Pulse</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Chickpea Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> High-Protein</span>
+                            <span><i class="fas fa-clock"></i> 90-100 days</span>
+                        </div>
+                        <p>Large-grain chickpea variety with high protein content.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="price">₹179.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Pulse Seeds -->
+                <div class="seed-card" data-category="pulse">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/moong-dal.jpg" alt="Green Pea Seeds">
+                        <span class="category-badge">Pulse</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Green Pea Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Cold Tolerant</span>
+                            <span><i class="fas fa-clock"></i> 60-70 days</span>
+                        </div>
+                        <p>Sweet and tender green pea variety suitable for cool season planting.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="price">₹199.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Oilseed Seeds -->
+                <div class="seed-card" data-category="oilseed">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/grains.jpg" alt="Mustard Seeds">
+                        <span class="category-badge">Oilseed</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Mustard Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> High-Oil</span>
+                            <span><i class="fas fa-clock"></i> 110-120 days</span>
+                        </div>
+                        <p>High oil content mustard variety with excellent yield potential.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="price">₹159.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Oilseed Seeds -->
+                <div class="seed-card" data-category="oilseed">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/grains.jpg" alt="Sunflower Seeds">
+                        <span class="category-badge">Oilseed</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Sunflower Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> High-Oil Content</span>
+                            <span><i class="fas fa-clock"></i> 90-100 days</span>
+                        </div>
+                        <p>Large-seeded sunflower variety with high oil content and yield potential.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="price">₹169.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Cotton Seeds -->
+                <div class="seed-card" data-category="cotton">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/hero-farm.jpg" alt="Cotton Seeds">
+                        <span class="category-badge">Cotton</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>BT Cotton Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Pest-Resistant</span>
+                            <span><i class="fas fa-clock"></i> 150-170 days</span>
+                        </div>
+                        <p>High-quality cotton seeds with built-in pest resistance.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="price">₹899.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Cotton Seeds -->
+                <div class="seed-card" data-category="cotton">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/about-hero.jpg" alt="Organic Cotton Seeds">
+                        <span class="category-badge">Cotton</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Organic Cotton Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Organic Certified</span>
+                            <span><i class="fas fa-clock"></i> 160-180 days</span>
+                        </div>
+                        <p>Certified organic cotton seeds for sustainable farming practices.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="price">₹999.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Herb Seeds -->
+                <div class="seed-card" data-category="herb">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/spinach.jpg" alt="Basil Seeds">
+                        <span class="category-badge">Herb</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Sweet Basil Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Aromatic</span>
+                            <span><i class="fas fa-clock"></i> 30-40 days</span>
+                        </div>
+                        <p>Italian sweet basil variety perfect for culinary use and container gardening.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="price">₹149.99/100g</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Vegetable Seeds -->
+                <div class="seed-card" data-category="vegetable">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/tomato.jpg" alt="Tomato Seeds">
+                        <span class="category-badge">Vegetable</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Premium Carrot Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> High-Yield</span>
+                            <span><i class="fas fa-clock"></i> 70-80 days</span>
+                        </div>
+                        <p>Sweet and crunchy carrot variety with excellent root development.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="price">₹179.99/kg</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More Herb Seeds -->
+                <div class="seed-card" data-category="herb">
+                    <div class="seed-image">
+                        <img src="/Farmesae/images/fresh-vegetables.jpg" alt="Coriander Seeds">
+                        <span class="category-badge">Herb</span>
+                        <div class="seed-actions">
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="seed-content">
+                        <h3>Coriander Seeds</h3>
+                        <div class="seed-meta">
+                            <span><i class="fas fa-leaf"></i> Fast Growing</span>
+                            <span><i class="fas fa-clock"></i> 20-30 days</span>
+                        </div>
+                        <p>Quick-growing coriander variety with aromatic leaves and seeds.</p>
+                        <div class="seed-details">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="price">₹129.99/100g</div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seed Guide Section -->
+        <section class="seed-guide">
+            <h2>Seed Growing Guide</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Temperature</h3>
+                    <p>Maintain optimal temperature between 20-25°C for best germination results.</p>
+                </div>
+                <div class="guide-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Moisture</h3>
+                    <p>Keep soil consistently moist but not waterlogged during germination.</p>
+                </div>
+                <div class="guide-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Light</h3>
+                    <p>Ensure adequate light exposure according to seed type requirements.</p>
+                </div>
+                <div class="guide-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Planting Depth</h3>
+                    <p>Plant seeds at appropriate depth based on seed size and type.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer Template -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Load header and footer templates
+        fetch('header-template.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        fetch('footer-template.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+        // Category filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const seedCards = document.querySelectorAll('.seed-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.filter;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                seedCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Wishlist functionality
+        const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const icon = button.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+            });
+        });
+    </script>
+</body>
+</html> 

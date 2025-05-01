@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; connect-src 'self'">
+    <meta name="theme-color" content="#ffffff">
+    <title>Cart - Farmease</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../js/products-data.js"></script>
+    <script src="../js/dark-mode.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/cart.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Farmease</span>
+            </a>
+            <div class="search-container">
+                <div class="search-bar">
+                    <div class="category-select">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="seeds">Seeds</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="cereals">Cereals</option>
+                            <option value="fertilizers">Fertilizers</option>
+                            <option value="tools">Tools</option>
+                            <option value="equipment">Equipment</option>
+                            <option value="pesticides">Pesticides</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Search for products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="nav-icons">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="account.html" class="account-icon">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="category-nav">
+            <ul>
+                <li><a href="products.html?category=seeds"><i class="fas fa-seedling"></i> Seeds</a></li>
+                <li><a href="products.html?category=fruits"><i class="fas fa-apple-alt"></i> Fruits</a></li>
+                <li><a href="products.html?category=vegetables"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                <li><a href="products.html?category=cereals"><i class="fas fa-wheat"></i> Cereals</a></li>
+                <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i> Fertilizers</a></li>
+                <li><a href="products.html?category=tools"><i class="fas fa-tools"></i> Tools</a></li>
+                <li><a href="chatbot/12.Ai ChatBot/index1.html"><i class="fas fa-robot"></i> Chatbot assistance</a></li>
+                <li><a href="products.html?category=pesticides"><i class="fas fa-bug"></i> Pesticides</a></li>
+            </ul>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-content">
+                <div class="mobile-search">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <ul class="mobile-categories">
+                    <li><a href="products.html?category=seeds"><i class="fas fa-seedling"></i> Seeds</a></li>
+                    <li><a href="products.html?category=fruits"><i class="fas fa-apple-alt"></i> Fruits</a></li>
+                    <li><a href="products.html?category=vegetables"><i class="fas fa-carrot"></i> Vegetables</a></li>
+                    <li><a href="products.html?category=cereals"><i class="fas fa-wheat"></i> Cereals</a></li>
+                    <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i> Fertilizers</a></li>
+                    <li><a href="products.html?category=tools"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="chatbot/12.Ai ChatBot/index1.html"><i class="fas fa-robot"></i> Chatbot assistance</a></li>
+                    <li><a href="products.html?category=pesticides"><i class="fas fa-bug"></i> Pesticides</a></li>
+                </ul>
+                <div class="mobile-account">
+                    <a href="account.html"><i class="fas fa-user"></i> My Account</a>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Page -->
+    <main class="cart-page">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <div class="cart-container">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically rendered here -->
+                </div>
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax (10%)</span>
+                        <span class="tax">₹0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="cart-summary-total">₹0.00</span>
+                    </div>
+                    <div class="coupon-code">
+                        <input type="text" placeholder="Enter coupon code">
+                        <button>Apply</button>
+                    </div>
+                    <a href="checkout.html" class="checkout-btn">
+                        Proceed to Checkout
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    <a href="../index.html">Farmease</a>
+                </div>
+                <p>Your trusted source for quality agricultural products and supplies.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@farmesae.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Farm Street, Agriculture City</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe to our newsletter for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Farmesae. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

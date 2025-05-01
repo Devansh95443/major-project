@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; connect-src 'self'">
+    <meta name="theme-color" content="#ffffff">
+    <title>Order Confirmation - Farmease</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .confirmation-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .confirmation-header i {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        .order-details {
+            margin-top: 2rem;
+        }
+        .order-items {
+            margin: 1rem 0;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .order-total {
+            margin-top: 1rem;
+            font-weight: bold;
+            text-align: right;
+        }
+        .shipping-details, .payment-details {
+            margin-top: 2rem;
+        }
+        .action-buttons {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .action-buttons a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .continue-shopping {
+            background: var(--primary-color);
+            color: white;
+        }
+        .view-orders {
+            background: var(--secondary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-header">
+            <i class="fas fa-check-circle"></i>
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your purchase. Your order has been successfully placed.</p>
+        </div>
+        
+        <div class="order-details">
+            <h2>Order Details</h2>
+            <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+            <p><strong>Date:</strong> <span id="orderDate"></span></p>
+            
+            <div class="order-items" id="orderItems">
+                <!-- Order items will be populated here -->
+            </div>
+            
+            <div class="order-total">
+                <p>Subtotal: <span id="subtotal"></span></p>
+                <p>Shipping: <span id="shipping"></span></p>
+                <p>Tax: <span id="tax"></span></p>
+                <p>Total: <span id="total"></span></p>
+            </div>
+        </div>
+        
+        <div class="shipping-details">
+            <h2>Shipping Details</h2>
+            <div id="shippingInfo">
+                <!-- Shipping details will be populated here -->
+            </div>
+        </div>
+        
+        <div class="payment-details">
+            <h2>Payment Details</h2>
+            <div id="paymentInfo">
+                <!-- Payment details will be populated here -->
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="../index.html" class="continue-shopping">Continue Shopping</a>
+            <a href="orders.html" class="view-orders">View Orders</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get order ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('orderId');
+            
+            // Get orders from localStorage
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            const order = orders.find(o => o.id === orderId);
+            
+            if (order) {
+                // Display order ID
+                document.getElementById('orderId').textContent = order.id;
+                
+                // Display order date
+                const orderDate = new Date(order.date);
+                document.getElementById('orderDate').textContent = orderDate.toLocaleDateString('en-IN', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                
+                // Display order items
+                const orderItemsContainer = document.getElementById('orderItems');
+                order.items.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'order-item';
+                    itemDiv.innerHTML = `
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>₹${(item.price * item.quantity).toLocaleString('en-IN')}</span>
+                    `;
+                    orderItemsContainer.appendChild(itemDiv);
+                });
+                
+                // Display totals
+                document.getElementById('subtotal').textContent = `₹${order.total.toLocaleString('en-IN')}`;
+                document.getElementById('shipping').textContent = '₹40';
+                document.getElementById('tax').textContent = `₹${(order.total * 0.1).toLocaleString('en-IN')}`;
+                document.getElementById('total').textContent = `₹${(order.total * 1.1 + 40).toLocaleString('en-IN')}`;
+                
+                // Display shipping info
+                const shippingInfo = document.getElementById('shippingInfo');
+                shippingInfo.innerHTML = `
+                    <p><strong>Name:</strong> ${order.shipping.fullName}</p>
+                    <p><strong>Address:</strong> ${order.shipping.address}</p>
+                    <p><strong>City:</strong> ${order.shipping.city}</p>
+                    <p><strong>State:</strong> ${order.shipping.state}</p>
+                    <p><strong>PIN Code:</strong> ${order.shipping.pincode}</p>
+                    <p><strong>Phone:</strong> ${order.shipping.phone}</p>
+                    <p><strong>Email:</strong> ${order.shipping.email}</p>
+                `;
+                
+                // Display payment info
+                const paymentInfo = document.getElementById('paymentInfo');
+                paymentInfo.innerHTML = `
+                    <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+                    ${order.transactionHash ? `<p><strong>Transaction Hash:</strong> ${order.transactionHash}</p>` : ''}
+                    <p><strong>Status:</strong> ${order.status}</p>
+                `;
+            } else {
+                document.querySelector('.confirmation-container').innerHTML = `
+                    <div class="confirmation-header">
+                        <i class="fas fa-exclamation-circle" style="color: #f44336;"></i>
+                        <h1>Order Not Found</h1>
+                        <p>We couldn't find the order details. Please check your order ID.</p>
+                        <div class="action-buttons" style="margin-top: 2rem;">
+                            <a href="../index.html" class="continue-shopping">Go to Homepage</a>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html> 

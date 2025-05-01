@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Technology Blog - Farmesae</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include Header Template -->
+    <div id="header-placeholder"></div>
+
+    <main class="blog-main">
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="hero-content">
+                <h1>Agricultural Technology Blog</h1>
+                <p>Stay updated with the latest innovations and technological advancements in agriculture.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Tech Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50k+</span>
+                        <span class="stat-label">Monthly Readers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Tech Categories</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="blog-controls">
+            <div class="search-section">
+                <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" name="q" placeholder="Search agricultural technologies..." required>
+                        <input type="hidden" name="as_sitesearch" value="farmesae.com">
+                    </div>
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </form>
+                
+                <div class="quick-filters">
+                    <span>Popular Topics:</span>
+                    <a href="https://www.google.com/search?q=AI+in+Agriculture" target="_blank">AI & ML</a>
+                    <a href="https://www.google.com/search?q=Agricultural+Drones" target="_blank">Drones</a>
+                    <a href="https://www.google.com/search?q=Blockchain+in+Agriculture" target="_blank">Blockchain</a>
+                    <a href="https://www.google.com/search?q=IoT+in+Agriculture" target="_blank">IoT</a>
+                </div>
+            </div>
+
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i> All
+                </button>
+                <button class="category-btn" data-category="ai-ml">
+                    <i class="fas fa-brain"></i> AI & ML
+                </button>
+                <button class="category-btn" data-category="robotics">
+                    <i class="fas fa-robot"></i> Robotics
+                </button>
+                <button class="category-btn" data-category="blockchain">
+                    <i class="fas fa-link"></i> Blockchain
+                </button>
+                <button class="category-btn" data-category="innovation">
+                    <i class="fas fa-lightbulb"></i> Innovation
+                </button>
+                <button class="category-btn" data-category="quantum">
+                    <i class="fas fa-atom"></i> Quantum Tech
+                </button>
+                <button class="category-btn" data-category="ar-vr">
+                    <i class="fas fa-vr-cardboard"></i> AR/VR
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Articles -->
+        <section class="featured-articles">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <div class="card-image">
+                        <img src="../images/blog/ai-agriculture.jpg" alt="AI in Agriculture">
+                        <span class="featured-badge">Featured</span>
+                        <span class="category-badge">AI & ML</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="content-header">
+                            <span class="reading-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <div class="meta-right">
+                                <button class="bookmark-btn" title="Bookmark">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                                <button class="share-btn" title="Share">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3>AI Revolution in Agriculture: GPT-4's Impact on Farming</h3>
+                        <p>Discover how GPT-4 and advanced AI models are transforming agricultural planning, crop management, and decision-making processes.</p>
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> March 20, 2024</span>
+                            <span><i class="far fa-eye"></i> 15.2K views</span>
+                        </div>
+                        <a href="blog/ai-revolution-agriculture.html" class="btn primary-btn">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Latest Articles -->
+        <section class="latest-articles">
+            <div class="section-header">
+                <h2 class="section-title">Latest Articles</h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid" title="Grid View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card" data-category="robotics">
+                    <div class="blog-image">
+                        <img src="../images/blog/drones.jpg" alt="Agricultural Drones">
+                        <span class="category-badge">Robotics</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="content-header">
+                            <span class="reading-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <div class="meta-right">
+                                <button class="bookmark-btn">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                                <button class="share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3>Autonomous Drones: The Future of Precision Agriculture</h3>
+                        <p>How autonomous drones are revolutionizing crop monitoring, spraying, and yield optimization.</p>
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> March 18, 2024</span>
+                            <span><i class="far fa-eye"></i> 8.5K views</span>
+                        </div>
+                        <a href="blog/autonomous-drones-agriculture.html" class="btn primary-btn">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card" data-category="blockchain">
+                    <div class="blog-image">
+                        <img src="../images/blog/blockchain.jpg" alt="Blockchain in Agriculture">
+                        <span class="category-badge">Blockchain</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="content-header">
+                            <span class="reading-time"><i class="far fa-clock"></i> 4 min read</span>
+                            <div class="meta-right">
+                                <button class="bookmark-btn">
+                                    <i class="far fa-bookmark"></i>
+                                </button>
+                                <button class="share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3>Blockchain Technology Revolutionizing Supply Chains</h3>
+                        <p>Exploring how blockchain is ensuring transparency and traceability in agricultural supply chains.</p>
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="far fa-eye"></i> 6.3K views</span>
+                        </div>
+                        <a href="blog/blockchain-agriculture.html" class="btn primary-btn">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="blog-newsletter">
+            <i class="fas fa-envelope newsletter-icon"></i>
+            <div class="newsletter-content">
+                <h3>Stay Updated with Agricultural Tech News</h3>
+                <p>Subscribe to our newsletter and never miss the latest technological advancements in agriculture.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        I agree to receive updates about agricultural technology
+                    </label>
+                </form>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="blog-pagination">
+            <button class="pagination-btn prev" disabled>
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <div class="pagination-numbers">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>12</button>
+            </div>
+            <button class="pagination-btn next">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Include Footer Template -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Load header and footer templates
+        fetch('header-template.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        fetch('footer-template.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // View switching
+        const viewButtons = document.querySelectorAll('.view-btn');
+        const blogGrid = document.querySelector('.blog-grid');
+
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const view = button.dataset.view;
+                
+                viewButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                if (view === 'list') {
+                    blogGrid.classList.add('list-view');
+                } else {
+                    blogGrid.classList.remove('list-view');
+                }
+            });
+        });
+
+        // Bookmark functionality
+        const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+
+        bookmarkButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const icon = button.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+            });
+        });
+
+        // Share functionality
+        const shareButtons = document.querySelectorAll('.share-btn');
+
+        shareButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Agricultural Technology Blog',
+                        text: 'Check out this interesting article about agricultural technology!',
+                        url: window.location.href
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

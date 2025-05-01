@@ -1,0 +1,21 @@
+{
+  "name": "farmesae",
+  "version": "1.0.0",
+  "description": "Ecommerce smart contract with advanced features",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network sepolia"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "dotenv": "^16.5.0",
+    "hardhat": "^2.23.0",
+    "http-server": "^14.1.1"
+  }
+}
